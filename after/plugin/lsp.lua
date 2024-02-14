@@ -23,8 +23,14 @@ cmp.setup({
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {},
+	ensure_installed = {
+    },
 	handlers = {
 		lsp_zero.default_setup,
 	},
 })
+
+require'lspconfig'.mojo.setup{
+    cmd={'mojo-lsp-server'},
+    filetypes={'mojo'},
+}
