@@ -10,7 +10,11 @@ return require('packer').startup(function(use)
 
     -- Dracula colorscheme
     use 'Mofiqul/dracula.nvim'
+
+    -- Gruvbox colorscheme
     use 'ellisonleao/gruvbox.nvim'
+
+    use 'tpope/vim-fugitive'
 
 	use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use {
