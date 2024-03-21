@@ -1,5 +1,8 @@
 vim.cmd 'colorscheme dracula'
+
 vim.opt.termguicolors = true
+vim.o.background = 'dark'
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
