@@ -24,13 +24,20 @@ cmp.setup({
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
+        "rust_analyzer",
+        "eslint",
     },
 	handlers = {
 		lsp_zero.default_setup,
 	},
 })
 
-require'lspconfig'.mojo.setup{
+local lspconfig = require('lspconfig')
+lspconfig.mojo.setup({
     cmd={'mojo-lsp-server'},
     filetypes={'mojo'},
-}
+})
+lspconfig.rust_analyzer.setup({})
+lspconfig.eslint.setup({
+    cmd={'vscode-eslint-language-server'}
+})

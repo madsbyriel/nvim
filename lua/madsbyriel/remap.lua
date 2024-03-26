@@ -14,3 +14,7 @@ vim.keymap.set("n", "<leader>g", ":G<CR>", { noremap = true })
 
 -- Start a commit message
 vim.keymap.set("n", "<leader>gc", ":G commit<CR>", { noremap = true })
+
+-- Push commits
+vim.keymap.set("n", "<leader>gp", ":G push<CR>", { noremap = true })
+
