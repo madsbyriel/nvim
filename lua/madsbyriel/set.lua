@@ -1,4 +1,4 @@
-vim.cmd 'colorscheme dracula'
+vim.cmd 'colorscheme gruvbox'
 
 vim.opt.termguicolors = true
 vim.o.background = 'dark'
