@@ -1,8 +1,19 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
+    -- Package management
+	use {
+        'wbthomason/packer.nvim',
+        requires = {
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim"
+        },
+        config = function ()
+            require"startup".setup()
+        end
+    }
 
+    -- Fuzzy finder
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		requires = { {'nvim-lua/plenary.nvim'} }
@@ -14,9 +25,16 @@ return require('packer').startup(function(use)
     -- Gruvbox colorscheme
     use 'ellisonleao/gruvbox.nvim'
 
+    -- FUGITIVE! Git stuff.
     use 'tpope/vim-fugitive'
 
-	use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- Nice coloring!
+    use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+
+    -- Startup screen
+    use "startup-nvim/startup.nvim"
+
+    -- LSP
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
@@ -29,7 +47,11 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 		}
 	}
+
+    -- The line at the bottom of the screen
 	use {'ojroques/nvim-hardline'}
+
+    -- Glow for markdown files
 	use {"ellisonleao/glow.nvim", config = function() require("glow").setup({
 		style = "dark",
 		width = 120,
