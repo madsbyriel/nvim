@@ -32,6 +32,8 @@ require('mason-lspconfig').setup({
     },
 })
 
+require("lspconfig").csharp_ls.setup{}
+
 lsp_config.rust_analyzer.setup({})
 lsp_config.eslint.setup({
     cmd={'vscode-eslint-language-server'}
