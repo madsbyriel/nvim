@@ -1,4 +1,4 @@
-vim.cmd 'colorscheme dracula'
+vim.cmd 'colorscheme gruvbox'
 
 vim.opt.termguicolors = true
 vim.o.background = 'dark'
@@ -20,3 +20,6 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
+
+-- Show a marker indicating errors at the column
+vim.opt.signcolumn = 'yes'
